@@ -1,14 +1,50 @@
 <?php
 include 'includes/init.php';
 include 'includes/header.php';
+
 ?>
 
     <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h1>Product list</h1>
+        <div class="row">
+            <div class="card col-4">
+                <div class="card-body">
+                    <?php
+                    /*$products = new product();
+                    $products->showAllProducts();*/
+                    ?>
+                    <h4 class="card-title">Name</h4>
+                    <h4 class="card-title">SKU</h4>
+                    <p class="card-text">Price</p>
+                    <p class="card-text">Type</p>
+                    <p class="card-text">Size</p>
+                </div>
+            </div>
+            <div class="card col-4">
+                <div class="card-body">
+                    <?php
+                    /*$products = new product();
+                    $products->showAllProducts();*/
+                    ?>
+                    <h4 class="card-title">Name</h4>
+                    <h4 class="card-title">SKU</h4>
+                    <p class="card-text">Price</p>
+                    <p class="card-text">Type</p>
+                    <p class="card-text">Size</p>
+                </div>
+            </div>
+            <div class="card col-4">
+                <div class="card-body">
+                    <?php
+                    /*$products = new product();
+                    $products->showAllProducts();*/
+                    ?>
+                    <h4 class="card-title">Name</h4>
+                    <h4 class="card-title">SKU</h4>
+                    <p class="card-text">Price</p>
+                    <p class="card-text">Type</p>
+                    <p class="card-text">Size</p>
+                </div>
             </div>
         </div>
     </div>

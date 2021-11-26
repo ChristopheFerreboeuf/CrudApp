@@ -1,6 +1,6 @@
 <?php
 
-class product extends abstractClass
+class product
 {
 
 }

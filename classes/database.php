@@ -2,70 +2,21 @@
 
 class database
 {
-    public $que;
+    private $servername;
+    private $username;
+    private $password;
+    private $database;
 
-    private $servername = 'localhost';
-
-    private $username = 'root';
-
-    private $password = 'password';
-
-    private $dbname = 'scandiweb';
-
-    private $result = array();
-
-    private $mysqli = '';
-
-    public function __construct()
+    protected function connect()
     {
-        $this->mysqli = new mysqli(
-            $this->servername,
-            $this->username,
-            $this->password,
-            $this->dbname,
-        );
-    }
+        $this->servername = 'localhost';
+        $this->username = 'root';
+        $this->password = 'password';
+        $this->database = 'scandiweb';
 
-    public function insert($table, $params=array())
-    {
-        $table_columns = implode(',', array_keys($params));
-        $table_value = implode("','", $params);
+        /** @var mysqli $mysqli */
+        $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
 
-        $sql = "INSERT INTO $table($table_columns) VALUES('$table_value')";
-
-        $result = $this->mysqli->query($sql);
-    }
-
-    public function update($table, $params=array(), $id)
-    {
-        $args = array();
-
-        foreach ($params as $key => $value) {
-            $args[] = "$key = '$value'";
-        }
-
-        $sql="UPDATE  $table SET " . implode(',', $args);
-        $sql .=" WHERE $id";
-
-        $result = $this->mysqli->query($sql);
-    }
-
-    public $sql;
-
-    public function select($table, $rows="*", $where = null)
-    {
-        if ($where != null) {
-            $sql="SELECT $rows FROM $table WHERE $where";
-        }else{
-            $sql="SELECT $rows FROM $table";
-        }
-
-        $this->sql = $result = $this->mysqli->query($sql);
-    }
-
-    public function __destruct()
-    {
-        $this->mysqli->close();
-
+        return $conn;
     }
 }
