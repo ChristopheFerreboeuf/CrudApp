@@ -6,41 +6,54 @@ include 'includes/header.php';
 
     <div class="container">
         <h1>Product list</h1>
+            <a href="#" class="btn btn-white border">Add</a>
+            <a href="#" class="btn btn-white border">Mass delete</a>
         <div class="row">
             <div class="card col-4">
-                <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1"></label>
+                </div>
+                <div class="card-body text-center">
                     <?php
                     /*$products = new product();
                     $products->showAllProducts();*/
                     ?>
-                    <h4 class="card-title">Name</h4>
                     <h4 class="card-title">SKU</h4>
+                    <h5 class="card-title">Name</h5>
                     <p class="card-text">Price</p>
                     <p class="card-text">Type</p>
                     <p class="card-text">Size</p>
                 </div>
             </div>
             <div class="card col-4">
-                <div class="card-body">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1"></label>
+                </div>
+                <div class="card-body text-center">
                     <?php
                     /*$products = new product();
                     $products->showAllProducts();*/
                     ?>
-                    <h4 class="card-title">Name</h4>
                     <h4 class="card-title">SKU</h4>
+                    <h5 class="card-title">Name</h5>
                     <p class="card-text">Price</p>
                     <p class="card-text">Type</p>
                     <p class="card-text">Size</p>
                 </div>
-            </div>
-            <div class="card col-4">
-                <div class="card-body">
+            </div><div class="card col-4">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1"></label>
+                </div>
+                <div class="card-body text-center">
                     <?php
                     /*$products = new product();
                     $products->showAllProducts();*/
                     ?>
-                    <h4 class="card-title">Name</h4>
                     <h4 class="card-title">SKU</h4>
+                    <h5 class="card-title">Name</h5>
                     <p class="card-text">Price</p>
                     <p class="card-text">Type</p>
                     <p class="card-text">Size</p>
