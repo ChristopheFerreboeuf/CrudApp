@@ -25,6 +25,7 @@
             <label for="weight" class="form-label">Size (MB)</label>
             <input type="number" name="weight" class="form-control" required>
         </div>
-        <button type="submit" name="save" class="btn btn-primary">Save</button>
+        <button type="submit" name="save" class="btn btn-white">Save</button>
+        <button type="submit" name="save" class="btn btn-white">Cancel</button>
     </form>
 </div>

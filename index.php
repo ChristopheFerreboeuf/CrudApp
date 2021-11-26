@@ -1,4 +1,6 @@
 <?php
+require_once('classes/database.php');
+require_once ('classes/product.php');
 include 'includes/init.php';
 include 'includes/header.php';
 
@@ -17,7 +19,7 @@ include 'includes/header.php';
                 <div class="card-body text-center">
                     <?php
                     /*$products = new product();
-                    $products->showAllProducts();*/
+                    $products->getProducts();*/
                     ?>
                     <h4 class="card-title">SKU</h4>
                     <h5 class="card-title">Name</h5>
