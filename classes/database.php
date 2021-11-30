@@ -24,9 +24,9 @@ class database
 
         parent::__construct($host, $user, $password, $db);
 
-        if ($this->_mysqli->connect_error) {
+        /*if ($this->_mysqli->connect_error) {
             die($this->_mysqli->connect_error);
-        }
+        }*/
     }
 
     public function query($sql)
