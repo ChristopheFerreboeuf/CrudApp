@@ -1,8 +1,15 @@
 <?php
 require_once('classes/database.php');
 require_once ('classes/product.php');
+
 include 'includes/init.php';
 include 'includes/header.php';
+
+$db = new database('localhost', 'root', 'password', 'scandiweb');
+$product = new product();
+$productData = $product->getProducts();
+print_r($productData);
+
 
 ?>
 
@@ -18,9 +25,9 @@ include 'includes/header.php';
                 </div>
                 <div class="card-body text-center">
                     <?php
-                    /*$products = new product();
-                    $products->getProducts();*/
-                    ?>
+/*                    $products = new product();
+                    $products->getProducts();
+                    */?>
                     <h4 class="card-title">SKU</h4>
                     <h5 class="card-title">Name</h5>
                     <p class="card-text">Price</p>
