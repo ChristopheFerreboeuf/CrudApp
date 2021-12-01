@@ -12,7 +12,7 @@ class database
     public static function getInstance()
     {
         if (!isset(self::$instance)) {
-            self::$instance = new database('localhost', 'root', 'password', 'scandiweb');
+            self::$instance = new database('mysql', 'root', 'password', 'scandiweb');
         }
         return self::$instance;
     }
@@ -20,8 +20,6 @@ class database
     public function __construct($host, $user, $password, $db)
     {
         $this->_mysqli = new mysqli($host, $user, $password, $db);
-
-        var_dump($this->_mysqli);
 
         /*parent::__construct($host, $user, $password, $db);*/
 
@@ -43,6 +41,13 @@ class database
     public function results()
     {
         return $this->_results;
+    }
+
+    public function fetchData()
+    {
+        $result = mysqli_query($this->_mysqli, 'SELECT * FROM product');
+
+        return $result;
     }
 
     /*private $host;

@@ -43,6 +43,16 @@ class product
         $this->size = $size;
     }
 
+/*    public function getProducts()
+    {
+        $productData = new database('mysql', 'root', 'password', 'db');
+        $products = $productData->getInstance();
+
+        $result = $products->query("SELECT * FROM product");
+
+        return $result;
+    }*/
+
     /**
      * @return string
      */

@@ -5,15 +5,11 @@ require_once ('classes/product.php');
 include 'includes/init.php';
 include 'includes/header.php';
 
-$db = new database('localhost', 'root', 'password!', 'scandiweb');
+$db = new database('mysql', 'root', 'password', 'scandiweb');
 $dbData = $db->getInstance();
 
-/*$product = new product();
-$sku = $product->getSku();
-$name = $product->getName();
-$price = $product->getPrice();
-$type = $product->getType();
-$size = $product->getSize();*/
+/*$products = new product('sku', 'name', 'price', 'type', 'size');
+$products->getProducts();*/
 
 ?>
 
@@ -22,48 +18,23 @@ $size = $product->getSize();*/
             <a href="#" class="btn btn-white border">Add</a>
             <a href="#" class="btn btn-white border">Mass delete</a>
         <div class="row">
+            <?php
+            $sql = $dbData->fetchData();
+            while($row = mysqli_fetch_array($sql)) { ?>
             <div class="card col-4 p-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1"></label>
                 </div>
                 <div class="card-body text-center">
-                    <?php
-/*                    $products = new product();
-                    $products->getProducts();
-                    */?>
-                    <h4 class="card-title">SKU</h4>
-                    <h5 class="card-title">Name</h5>
-                    <p class="card-text">Price</p>
-                    <p class="card-text">Type</p>
-                    <p class="card-text">Size</p>
+                    <h4 class="card-title"><?php echo $row['sku'] ?></h4>
+                    <h5 class="card-title"><?php echo $row['name']?></h5>
+                    <p class="card-text"><?php echo $row['price'] ?></p>
+                    <p class="card-text"><?php echo $row['type'] ?></p>
+                    <p class="card-text"><?php echo $row['size'] ?></p>
                 </div>
             </div>
-            <div class="card col-4 p-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1"></label>
-                </div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">SKU</h4>
-                    <h5 class="card-title">Name</h5>
-                    <p class="card-text">Price</p>
-                    <p class="card-text">Type</p>
-                    <p class="card-text">Size</p>
-                </div>
-            </div><div class="card col-4 p-3">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                    <label class="form-check-label" for="defaultCheck1"></label>
-                </div>
-                <div class="card-body text-center">
-                    <h4 class="card-title">SKU</h4>
-                    <h5 class="card-title">Name</h5>
-                    <p class="card-text">Price</p>
-                    <p class="card-text">Type</p>
-                    <p class="card-text">Size</p>
-                </div>
-            </div>
+            <?php } ?>
         </div>
     </div>
 
