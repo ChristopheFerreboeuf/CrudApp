@@ -5,8 +5,7 @@ class database
 
     private $_mysqli,
             $_query,
-            $_results = array(),
-            $_count = 0;
+            $_results = array();
 
     public static $instance;
 
@@ -20,13 +19,15 @@ class database
 
     public function __construct($host, $user, $password, $db)
     {
-        /*$this->_mysqli = new mysqli('localhost', 'root', 'password', 'scandiweb');*/
+        $this->_mysqli = new mysqli($host, $user, $password, $db);
 
-        parent::__construct($host, $user, $password, $db);
+        var_dump($this->_mysqli);
 
-        /*if ($this->_mysqli->connect_error) {
+        /*parent::__construct($host, $user, $password, $db);*/
+
+        if ($this->_mysqli->connect_error) {
             die($this->_mysqli->connect_error);
-        }*/
+        }
     }
 
     public function query($sql)
@@ -44,20 +45,20 @@ class database
         return $this->_results;
     }
 
-    /*private $servername;
-    private $username;
+    /*private $host;
+    private $user;
     private $password;
-    private $database;
+    private $db;
 
     protected function connect()
     {
-        $this->servername = 'localhost';
-        $this->username = 'root';
+        $this->host = 'localhost';
+        $this->user = 'root';
         $this->password = 'password';
-        $this->database = 'scandiweb';
+        $this->db = 'scandiweb';
 
         @var mysqli $mysqli
-        $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
+        $conn = new mysqli($this->host, $this->user, $this->password, $this->db);
 
         return $conn;
     }*/

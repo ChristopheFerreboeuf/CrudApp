@@ -5,11 +5,15 @@ require_once ('classes/product.php');
 include 'includes/init.php';
 include 'includes/header.php';
 
-$db = new database('localhost', 'root', 'password', 'scandiweb');
-$product = new product();
-$productData = $product->getProducts();
-print_r($productData);
+$db = new database('localhost', 'root', 'password!', 'scandiweb');
+$dbData = $db->getInstance();
 
+/*$product = new product();
+$sku = $product->getSku();
+$name = $product->getName();
+$price = $product->getPrice();
+$type = $product->getType();
+$size = $product->getSize();*/
 
 ?>
 
