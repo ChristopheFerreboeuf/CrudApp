@@ -1,6 +1,6 @@
 <?php
 
-class database
+class Database
 {
 
     private $_mysqli,
@@ -12,7 +12,7 @@ class database
     public static function getInstance()
     {
         if (!isset(self::$instance)) {
-            self::$instance = new database('mysql', 'root', 'password', 'scandiweb');
+            self::$instance = new Database('mysql', 'root', 'password', 'scandiweb');
         }
         return self::$instance;
     }
@@ -41,13 +41,6 @@ class database
     public function results()
     {
         return $this->_results;
-    }
-
-    public function fetchData()
-    {
-        $result = mysqli_query($this->_mysqli, 'SELECT * FROM product');
-
-        return $result;
     }
 
     /*private $host;

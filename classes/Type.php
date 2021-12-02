@@ -1,6 +1,6 @@
 <?php
 
-class type extends product
+class Type extends Product
 {
     /**
      * @var int
