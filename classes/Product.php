@@ -1,6 +1,6 @@
 <?php
 
-class Product extends ProductRepository
+class Product
 {
     /**
      * @var string

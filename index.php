@@ -8,8 +8,8 @@ include 'includes/header.php';
 $db = new Database('mysql', 'root', 'password', 'scandiweb');
 $dbData = $db->getInstance();
 
-/*$products = new product('sku', 'name', 'price', 'type', 'size');
-$products->getProducts();*/
+$products = new ProductRepository();
+$productsData = $products->getProducts();
 
 ?>
 
@@ -19,8 +19,8 @@ $products->getProducts();*/
             <a href="#" class="btn btn-white border">Mass delete</a>
         <div class="row p-3">
             <?php
-            $sql = $dbData->fetchData();
-            while($row = mysqli_fetch_array($sql)) { ?>
+/*            $sql = $dbData->fetchData();
+            while($row = mysqli_fetch_array($sql)) { */?>
             <div class="card col-4 p-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
@@ -34,7 +34,7 @@ $products->getProducts();*/
                     <p class="card-text">Size: <?php echo $row['size'] ?></p>
                 </div>
             </div>
-            <?php } ?>
+            <?php /*} */?>
         </div>
     </div>
 
