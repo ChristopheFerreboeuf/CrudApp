@@ -9,7 +9,7 @@ $db = new Database('mysql', 'root', 'password', 'scandiweb');
 $dbData = $db->getInstance();
 
 $products = new ProductRepository();
-$productsData = $products->getProducts();
+$productData = $products->getProducts();
 
 ?>
 
@@ -19,22 +19,21 @@ $productsData = $products->getProducts();
             <a href="#" class="btn btn-white border">Mass delete</a>
         <div class="row p-3">
             <?php
-/*            $sql = $dbData->fetchData();
-            while($row = mysqli_fetch_array($sql)) { */?>
+            foreach ($productData as $product) { ?>
             <div class="card col-4 p-3">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                     <label class="form-check-label" for="defaultCheck1"></label>
                 </div>
                 <div class="card-body text-center">
-                    <h4 class="card-title">SKU: <?php echo $row['sku'] ?></h4>
-                    <h5 class="card-title">Name: <?php echo $row['name']?></h5>
-                    <p class="card-text">Price: <?php echo $row['price'] ?> &euro;</p>
-                    <p class="card-text">Type: <?php echo $row['type'] ?></p>
-                    <p class="card-text">Size: <?php echo $row['size'] ?></p>
+                    <h4 class="card-title">SKU: <?= $product['sku'] ?></h4>
+                    <h5 class="card-title">Name: <?= $product['name']?></h5>
+                    <p class="card-text">Price: <?= $product['price'] ?> &euro;</p>
+                    <p class="card-text">Type: <?= $product['type'] ?></p>
+                    <p class="card-text">Size: <?= $product['size'] ?></p>
                 </div>
             </div>
-            <?php /*} */?>
+            <?php } ?>
         </div>
     </div>
 

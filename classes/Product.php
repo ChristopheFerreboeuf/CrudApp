@@ -43,6 +43,13 @@ class Product
         $this->size = $size;
     }
 
+    public function getProduct()
+    {
+        $result = $this->getConnection()->query('SELECT id FROM product WHERE id = ?');
+
+        return $result;
+    }
+
     /**
      * @return string
      */

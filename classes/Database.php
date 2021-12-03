@@ -21,8 +21,6 @@ class Database
     {
         $this->_mysqli = new mysqli($host, $user, $password, $db);
 
-        /*parent::__construct($host, $user, $password, $db);*/
-
         if ($this->_mysqli->connect_error) {
             die($this->_mysqli->connect_error);
         }
@@ -42,22 +40,4 @@ class Database
     {
         return $this->_results;
     }
-
-    /*private $host;
-    private $user;
-    private $password;
-    private $db;
-
-    protected function connect()
-    {
-        $this->host = 'localhost';
-        $this->user = 'root';
-        $this->password = 'password';
-        $this->db = 'scandiweb';
-
-        @var mysqli $mysqli
-        $conn = new mysqli($this->host, $this->user, $this->password, $this->db);
-
-        return $conn;
-    }*/
 }

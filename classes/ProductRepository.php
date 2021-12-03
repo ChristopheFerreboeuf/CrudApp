@@ -19,13 +19,18 @@ class ProductRepository
             }
         }
 
+        /*$products = [];
+
+        while($row = $results->results()) {
+            $products = new Product(
+                $row['sku'],
+                $row['name'],
+                $row['price'],
+                $row['type_id'],
+                $row['size'])
+            ;
+        }*/
+
         return $value;
-    }
-
-    public function getProduct()
-    {
-        $result = $this->getConnection()->query('SELECT id FROM product WHERE id = ?');
-
-        return $result;
     }
 }
