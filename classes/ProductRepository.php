@@ -13,6 +13,8 @@ class ProductRepository
     {
         $results = $this->getConnection()->query('SELECT * FROM product');
 
+        /*$product = new Product($results);*/
+
         while($row = $results->results()) {
             foreach ($row as $results => $value) {
                 var_dump($value);

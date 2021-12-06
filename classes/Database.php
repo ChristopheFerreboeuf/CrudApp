@@ -26,6 +26,10 @@ class Database
         }
     }
 
+    /**
+     * @param $sql
+     * @return $this
+     */
     public function query($sql)
     {
         if ($this->_query = $this->_mysqli->query($sql)) {
@@ -36,7 +40,7 @@ class Database
         return $this;
     }
 
-    public function results()
+    public function results(): array
     {
         return $this->_results;
     }
