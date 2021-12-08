@@ -25,12 +25,21 @@ class ProductRepository
             );
         }
 
+        var_dump($product);
+
         /*while($row = $results->results()) {
             foreach ($row as $results => $value) {
                 var_dump($value);
             }
         }*/
 
-        return $product;
+        return $results;
+    }
+
+    public function getProduct($id)
+    {
+        $results = $this->getConnection()->query('SELECT id FROM product WHERE id = ?');
+
+        return $results;
     }
 }
