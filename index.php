@@ -22,7 +22,7 @@ $productData = $products->getProducts();
             foreach ($productData as $product) { ?>
             <div class="card col-4 p-3">
                 <div class="form-check">
-                    <input class="form-check-input delete-checkbox" type="checkbox" value="" id="delete">
+                    <input class="form-check-input delete-checkbox" type="checkbox" value="">
                     <label class="form-check-label" for="delete"></label>
                 </div>
                 <div class="card-body text-center">

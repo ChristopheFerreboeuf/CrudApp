@@ -13,26 +13,24 @@ class ProductRepository
     {
         $results = $this->getConnection()->query('SELECT * FROM product');
 
-        /*$product = new Product($results);*/
+        $product = [];
 
-        while($row = $results->results()) {
-            foreach ($row as $results => $value) {
-                var_dump($value);
-            }
-        }
-
-        /*$products = [];
-
-        while($row = $results->results()) {
-            $products = new Product(
+        while ($row = $results) {
+            $product = new Product(
                 $row['sku'],
                 $row['name'],
                 $row['price'],
                 $row['type_id'],
-                $row['size'])
-            ;
+                $row['size']
+            );
+        }
+
+        /*while($row = $results->results()) {
+            foreach ($row as $results => $value) {
+                var_dump($value);
+            }
         }*/
 
-        return $value;
+        return $product;
     }
 }
