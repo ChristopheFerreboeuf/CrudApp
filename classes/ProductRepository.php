@@ -13,10 +13,10 @@ class ProductRepository
     {
         $results = $this->getConnection()->query('SELECT * FROM product');
 
-        $product = [];
+        $products = [];
 
-        while ($row = $results) {
-            $product = new Product(
+        while ($row = $results->fetchArray()) {
+            $products[] = new Product(
                 $row['sku'],
                 $row['name'],
                 $row['price'],
@@ -25,15 +25,9 @@ class ProductRepository
             );
         }
 
-        var_dump($product);
+        var_dump($products);
 
-        /*while($row = $results->results()) {
-            foreach ($row as $results => $value) {
-                var_dump($value);
-            }
-        }*/
-
-        return $results;
+        return $products;
     }
 
     public function getProduct($id)
